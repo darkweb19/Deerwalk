@@ -71,6 +71,10 @@ function groupAge() {
   ageElement.value = "";
 }
 
+// < 18 = child
+// > 18 = young
+// age  > 60 = old
+
 function groupCheck() {
   const ageElement = document.getElementById("age");
   const age = parseInt(ageElement.value);
@@ -87,7 +91,3 @@ function groupCheck() {
   }
   ageElement.value = "";
 }
-
-// < 18 = child
-// > 18 = young
-// age  > 60 = old
