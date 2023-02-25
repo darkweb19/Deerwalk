@@ -55,14 +55,15 @@
 .trim()
 .split()
 
+!Their Implementation
+let str = "   Hel lo wo rld   ";
+console.log(str.slice(1, 4));
+console.log(str.substring(1, 4)); //slice and it is they both are same
+console.log(str.substr(1, 4));
+console.log(str.concat("sujan")); //adds new text with back
+console.log(str.trim()); //removes the white spaces
+console.log(str.split(" "));// it splits with given value
 */
-// let str = "   Hel lo wo rld   ";
-// // console.log(str.slice(1, 4));
-// // console.log(str.substring(1, 4)); //slice and it is they both are same
-// // console.log(str.substr(1, 4));
-// // console.log(str.concat("sujan")); //adds new text with back
-// // console.log(str.trim()); //removes the white spaces
-// console.log(str.split(" "));// it splits with given value
 
 //! task number 3 in including html
 function count() {

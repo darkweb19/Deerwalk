@@ -4,6 +4,8 @@
 // }
 
 //! for odd and even
+
+//!for loop
 // for (let i = 1; i <= 100; i++) {
 //   if (i % 2 == 0) {
 //     console.log(`${i} is Even`);
@@ -12,9 +14,8 @@
 //   }
 // }
 
+// //!While loop
 // let num = 1;
-
-//While loop
 // while (num <= 10) {
 //   console.log(num);
 //   num++;
