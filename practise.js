@@ -40,7 +40,7 @@ function addUp(num) {
 	for (let i = 1; i <= num; i++) {
 		sum = sum + i;
 	}
-	console.log(sum);
+	return sum;
 }
 // addUp(600);
 
@@ -58,20 +58,39 @@ matchHouses(1) ➞ 6
 matchHouses(4) ➞ 21
 
 matchHouses(87) ➞ 436
- */
+*/
 
 // 1 - 6   2-11   3-16   4-21    87 -
 //          12-1   18-2  24-3    522-86
 function matchHouses(step) {
-	console.log(step * 6 - (step - 1));
+	if (step == 0) {
+		return 0;
+	}
+	return step * 6 - (step - 1);
 }
 // matchHouses(87);
 
 //!function that shifts to left
 function shiftToLeft(x, y) {
-	console.log(x * 2 ** y);
+	return x * 2 ** y;
 }
 // shiftToLeft(46, 6);
+
+//!Power Calculator
+/*
+Create a function that takes voltage and current and returns the calculated power.
+
+Examples
+circuitPower(230, 10) ➞ 2300
+
+circuitPower(110, 3) ➞ 330
+
+circuitPower(480, 20) ➞ 9600
+*/
+function circuitPower(voltage, current) {
+	return voltage * current;
+}
+// console.log(circuitPower(23, 2));
 
 //!swap the number
 // If 27 is our input, we should return false because swapping the digits gives us 72, and 72 > 27.
@@ -164,6 +183,88 @@ function seriesResistance(arr) {
 	for (let i = 0; i < arr.length; i++) {
 		RT = RT + arr[i];
 	}
-	console.log(RT + " ohms");
+	function str() {
+		if (RT <= 1) {
+			return " ohm";
+		} else {
+			return " ohms";
+		}
+	}
+	return RT + str();
 }
+// console.log(seriesResistance([16, 3.5, 6]));
 // seriesResistance([16, 3.5, 6]); //25.5 ohms
+
+//!What's Hiding Amongst the Crowd?
+/*
+A word is on the loose and now has tried to hide amongst a crowd of tall letters! Help write a function to detect what the word is, knowing the following rules:
+
+The wanted word is in lowercase.
+The crowd of letters is all in uppercase.
+Note that the word will be spread out amongst the random letters, but their letters remain in the same order.
+
+Examples:
+detectWord("UcUNFYGaFYFYGtNUH") ➞ "cat"
+
+detectWord("bEEFGBuFBRrHgUHlNFYaYr") ➞ "burglar"
+
+detectWord("YFemHUFBbezFBYzFBYLleGBYEFGBMENTment") ➞ "embezzlement"
+*/
+function detectWords(str) {
+	let newStr = "";
+	for (let i = 0; i < str.length; i++) {
+		if (str[i] == str[i].toLowerCase()) {
+			newStr = newStr + str[i];
+		}
+	}
+	console.log(newStr);
+}
+// detectWords("UcUNFYGaFYFYGtNUH");
+// console.log(detectWords("KJHKca"));
+
+//!Tuck in array
+/*
+Create a function that takes two arrays and insert the second array in the middle of the first array.
+Example :
+tuckIn([1, 10], [2, 3, 4, 5, 6, 7, 8, 9]) ➞ [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+tuckIn([15,150], [45, 75, 35]) ➞ [15, 45, 75, 35, 150]
+
+tuckIn([[1, 2], [5, 6]], [[3, 4]]) ➞ [[1, 2], [3, 4], [5, 6]]
+*/
+function tuckIn(arr1, arr2) {
+	let newArr = [];
+	let newLength = arr1.length + arr2.length;
+	newArr[0] = arr1[0];
+	newArr[newLength - 1] = arr1[arr1.length - 1];
+	for (let i = 1; i < newLength - 1; i++) {
+		newArr[i] = arr2[i - 1];
+	}
+	console.log(newArr);
+}
+
+// tuckIn([1, 10], [2, 3, 4, 5, 6, 7, 8, 9]);      output=> //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+//!No Conditionals
+/*
+No Conditionals?
+Write a function that returns 0 if the input is 1, and returns 1 if the input is 0.
+
+Examples
+flip(1) ➞ 0
+
+flip(0) ➞ 1....
+
+Notes:
+		Try completing this challenge without using any:
+			.Conditionals
+			.Ternary operators
+			.Negations
+			.Bit operators
+*/
+function potatoes(y) {
+	let x = 1;
+	let z = x - y;
+	return z;
+}
+// console.log(potatoes(0));
