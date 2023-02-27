@@ -57,7 +57,7 @@ let a = (a) => console.log("Hi" + (a + b));
 //!this is an arrow function
 
 // a(4, 5);
-let welcome = (user) => console.log(`Welcome ${user}`);
+b;
 // welcome("Sujan");
 
 //!Call back function example  is add and Higher order function is Calculate
@@ -71,7 +71,7 @@ function calculate(num1, num2, operation) {
 function run(num1, num2, sym) {
 	let fn;
 	if (sym == "+") {
-		fn = add;
+		fn = adds;
 	} else {
 		fn = subs;
 	}
