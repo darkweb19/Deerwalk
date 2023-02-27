@@ -262,9 +262,32 @@ Notes:
 			.Negations
 			.Bit operators
 */
-function potatoes(y) {
+function flip(y) {
 	let x = 1;
 	let z = x - y;
 	return z;
 }
-// console.log(potatoes(0));
+
+//!Find the total number of Potatoes
+/*
+Create a function to return the amount of potatoes there are in a string.
+
+Examples
+potatoes("potato") ➞ 1
+
+potatoes("potatopotato") ➞ 2
+
+potatoes("potatoapple") ➞ 1
+*/
+function Potatoes(str) {
+	str = str.replace(/potato/g, ".");
+	// console.log(str);
+	let counter = 0;
+	for (let i = 0; i < str.length; i++) {
+		if (str[i] == ".") {
+			counter++;
+		}
+	}
+	console.log(counter);
+}
+// Potatoes("potatoaspotato potato as potato"); // output : 4
