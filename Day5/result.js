@@ -7,6 +7,10 @@ let userInput = document.getElementById("mark");
 
 function add() {
 	let user = parseFloat(userInput.value);
+	if (isNaN(userInput.value)) {
+		userInput.value = "";
+		return;
+	}
 	if (userInput.value != "") {
 		arr.push(user);
 		console.log(arr);
