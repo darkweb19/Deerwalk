@@ -29,6 +29,12 @@ function add() {
 }
 
 function calcResult() {
+	if (arr.length == 0) {
+		reset();
+		return;
+	}
+
+	console.log(arr.length);
 	//for result
 	let every = arr.every((value) => {
 		return value >= 40;
