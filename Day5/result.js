@@ -4,18 +4,27 @@ let result = document.getElementById("result");
 let percent = document.getElementById("percentage");
 let arrayMark = document.getElementById("arrayMark");
 let userInput = document.getElementById("mark");
+let popup = document.getElementById("popup");
 
 function add() {
 	let user = parseFloat(userInput.value);
-	if (isNaN(userInput.value)) {
+	if (isNaN(userInput.value) || userInput.value > 100) {
+		if (isNaN(userInput.value)) {
+			popup.innerHTML = "Error: Should be a number";
+		}
+		if (userInput.value > 100) {
+			popup.innerHTML = "Error: Must be less than 100";
+		}
 		userInput.value = "";
 		return;
 	}
 	if (userInput.value != "") {
 		arr.push(user);
-		console.log(arr);
 		arrayMark.innerHTML = "Mark : " + arr;
 		userInput.value = "";
+		popup.innerHTML = "Error: ";
+	} else {
+		popup.innerHTML = "Error: Cannot be empty";
 	}
 }
 
