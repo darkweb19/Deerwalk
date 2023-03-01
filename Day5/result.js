@@ -56,5 +56,6 @@ function reset() {
 	arr = [];
 	arrayMark.innerHTML = "Mark : ";
 	result.innerHTML = "Result : ";
+	popup.innerHTML = "Error:";
 	percent.innerHTML = "Percentage : ";
 }
