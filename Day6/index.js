@@ -27,6 +27,7 @@ function createUser() {
 	if (nameEl.value == "" || ageEl.value == "") {
 		return;
 	}
+
 	user.push(userDet);
 
 	nameEl.value = "";

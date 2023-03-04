@@ -1,25 +1,24 @@
-// class User {
-// 	#name;
-// constructor
-// 	constructor(name, age) {
-// 		this.#name = name;
-// 		this.age = age;
-// 		this.country = "Nepal";
-// 	}
-// setName(name) {
-// 	this.#name = name;
-// }
+class User {
+	#name;
+	constructor(name, age) {
+		this.#name = name;
+		this.age = age;
+		this.country = "Nepal";
+	}
+	setName(name) {
+		this.#name = name;
+	}
 
-// getName() {
-// 	return this.#name;
-// }
-// 	get name() {
-// 		return this.#name;
-// 	}
-// 	set name(name) {
-// 		this.#name = name;
-// 	}
-// }
+	getName() {
+		return this.#name;
+	}
+	get name() {
+		return this.#name;
+	}
+	set name(name) {
+		this.#name = name;
+	}
+}
 
 // const u1 = new User("ram", 2);
 
