@@ -6,7 +6,8 @@
 // } else {
 // 	console.log("Not same");
 // }
-// setTimeout(callBack, delay in ms);
+//! setTimeout(callBack, delay in ms);
+
 //!prints in  given gap
 // setTimeout(() => {
 // 	console.log("hello");
@@ -59,12 +60,13 @@
 // 		cb(a - b);
 // 	}, 3000);
 // }
+
 // console.log("start");
-// // add(3, 5, (s) => {
-// // 	mul(s, 2, (result) => {
-// // 		console.log(result);
-// // 	});
-// // });
+// add(3, 5, (s) => {
+// 	mul(s, 2, (result) => {
+// 		console.log(result);
+// 	});
+// });
 // add(3, 5, (s) => {
 // 	mul(s, 2, (result) => {
 // 		sub(result, 3, (subResult) => {
@@ -73,9 +75,27 @@
 // 	});
 // });
 
-//!promise object in js
-function add(a, b) {
-	return new Promise((resolve, reject) => {
-		setTimeout();
-	});
+// //!promise object in js
+// function add(a, b) {
+// 	return new Promise((resolve, reject) => {
+// 		setTimeout();
+// 	});
+// }
+
+function add(a, b, cb) {
+	setTimeout(() => {
+		cb(a + b);
+	}, 1000);
 }
+
+function sub(a, b, cb) {
+	setTimeout(() => {
+		cb(a - b);
+	}, 1000);
+}
+
+add(2, 3, (s) => {
+	sub(s, 3, (result) => {
+		console.log(result);
+	});
+});
