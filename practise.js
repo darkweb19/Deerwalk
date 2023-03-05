@@ -326,3 +326,47 @@ function minMax(arr) {
 	return newArr;
 }
 // console.log(minMax([1]));
+
+//!Number Splits Given a number, return an array containing the two halves of the number. If the number is odd, make the rightmost number higher.
+
+// Examples
+// numberSplit(4) ➞ [2, 2]
+
+// numberSplit(10) ➞ [5, 5]
+
+// numberSplit(11) ➞ [5, 6]
+
+// numberSplit(-9) ➞ [-5, -4]
+function numberSplit(n) {
+	let arr = [];
+	if (n % 2 == 0) {
+		arr.push(n / 2);
+		arr.push(n - n / 2);
+	} else {
+		arr.push(n / 2 - 0.5);
+		arr.push(n - (n / 2 - 0.5));
+	}
+	console.log(arr);
+}
+// numberSplit(1);
+
+//!Filter out strings from an array
+/*
+Create a function that takes an array of non-negative integers and strings and return a new array without the strings.
+
+Examples
+filterArray([1, 2, "a", "b"]) ➞ [1, 2]
+
+filterArray([1, "a", "b", 0, 15]) ➞ [1, 0, 15]
+*/
+function filterArray(arr) {
+	let arrResult = [];
+
+	for (let i = 0; i < arr.length; i++) {
+		if (typeof arr[i] != "string") {
+			arrResult.push(arr[i]);
+		}
+	}
+	console.log(arrResult);
+}
+filterArray(["d", 3]);
