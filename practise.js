@@ -371,3 +371,4 @@ function filterArray(arr) {
 	console.log(arrResult);
 }
 filterArray(["d", 3]);
+//added something fishy
