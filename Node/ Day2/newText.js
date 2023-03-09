@@ -1,6 +1,6 @@
 //!how to read and write file
 const fs = require("fs");
-const { resolve } = require("path");
+
 // const text = fs.readFileSync("test.txt");
 // console.log(text.toString());
 // // fs.unlinkSync("test1.txt");
@@ -53,6 +53,27 @@ const { resolve } = require("path");
 // 	}
 // });
 
+// fs.readFile("test.txt", "utf8", (err, data) => {
+// 	if (!err) {
+// 		fs.writeFile("testNew.txt", data, (err) => {
+// 			if (!err) {
+// 				console.log(data);
+// 				fs.unlink("test.txt", (err) => {
+// 					if (!err) {
+// 						console.log("file is Deleted");
+// 					} else {
+// 						console.log(err);
+// 					}
+// 				});
+// 			} else {
+// 				console.log(err);
+// 			}
+// 		});
+// 	} else {
+// 		console.log(err);
+// 	}
+// });
+
 //!task using promise object
 function readFileAsync(filename) {
 	return new Promise((resolve, reject) => {
@@ -78,9 +99,22 @@ function writeFileAsync(filename, content) {
 	});
 }
 
+function unlinkAsync(filename) {
+	return new Promise((resolve, reject) => {
+		fs.unlink(filename, (err) => {
+			if (!err) {
+				console.log("file deleted " + filename);
+				resolve(filename);
+			} else {
+				reject(err);
+			}
+		});
+	});
+}
 async function run() {
-	// const data = await readFileAsync("test2.txt");
-	const data2 = await writeFileAsync("test3.txt", "New file");
+	const data = await readFileAsync("test2.txt");
+	const data2 = await writeFileAsync("test3.txt", data); // test3 file  contains the data of test2 file
+	await unlinkAsync("test2.txt"); //test2 file is deleted (unlink)
 	console.log(data2);
 }
 run();
