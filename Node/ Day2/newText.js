@@ -3,7 +3,7 @@ const fs = require("fs");
 
 // const text = fs.readFileSync("test.txt");
 // console.log(text.toString());
-// // fs.unlinkSync("test1.txt");
+// fs.unlinkSync("test1.txt");
 
 // const fs = require("fs");
 // const text = fs.readFileSync("text.txt");
@@ -11,7 +11,7 @@ const fs = require("fs");
 // fs.writeFileSync("test2.txt", write);
 // const read2 = fs.readFileSync("test2.txt");
 // console.log(read2.toString());
-// // fs.unlinkSync("text.txt");
+// fs.unlinkSync("text.txt");
 
 //!using call back arguments
 // fs.readFile("test.txt", "utf8", (err, data) => {
