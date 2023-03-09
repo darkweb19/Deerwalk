@@ -75,6 +75,7 @@ const fs = require("fs");
 // });
 
 //!task using promise object
+//reading function for asynchronous
 function readFileAsync(filename) {
 	return new Promise((resolve, reject) => {
 		fs.readFile(filename, "utf8", (err, data) => {
@@ -87,6 +88,7 @@ function readFileAsync(filename) {
 	});
 }
 
+//writing function for asynchronous
 function writeFileAsync(filename, content) {
 	return new Promise((resolve, reject) => {
 		fs.writeFile(filename, content, (err) => {
@@ -99,6 +101,7 @@ function writeFileAsync(filename, content) {
 	});
 }
 
+//unlinking function for asynchronous
 function unlinkAsync(filename) {
 	return new Promise((resolve, reject) => {
 		fs.unlink(filename, (err) => {
@@ -111,10 +114,13 @@ function unlinkAsync(filename) {
 		});
 	});
 }
+
+//main driver
 async function run() {
-	const data = await readFileAsync("test2.txt");
+	const data = await readFileAsync("text2.txt");
 	const data2 = await writeFileAsync("test3.txt", data); // test3 file  contains the data of test2 file
-	await unlinkAsync("test2.txt"); //test2 file is deleted (unlink)
+	// await unlinkAsync("text2.txt"); //test2 file is deleted (unlink)
 	console.log(data2);
 }
+//called main driving function
 run();
