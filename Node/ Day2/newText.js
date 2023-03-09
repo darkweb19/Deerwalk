@@ -115,12 +115,19 @@ function unlinkAsync(filename) {
 	});
 }
 
-//main driver
-async function run() {
-	const data = await readFileAsync("text2.txt");
-	const data2 = await writeFileAsync("test3.txt", data); // test3 file  contains the data of test2 file
-	// await unlinkAsync("text2.txt"); //test2 file is deleted (unlink)
-	console.log(data2);
-}
-//called main driving function
-run();
+// //main driver
+// async function run() {
+// 	const data = await readFileAsync("text2.txt");
+// 	const data2 = await writeFileAsync("test3.txt", data); // test3 file  contains the data of test2 file
+// 	// await unlinkAsync("text2.txt"); //test2 file is deleted (unlink)
+// 	console.log(data2);
+// }
+// //called main driving function
+// run();
+
+//! i want to export it so
+module.exports = {
+	readFileAsync,
+	writeFileAsync,
+	unlinkAsync,
+};
