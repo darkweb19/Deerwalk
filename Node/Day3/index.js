@@ -14,8 +14,7 @@ const unlinkAsync = util.promisify(fs.unlink);
 const run = async () => {
 	const readFile = await readFileAsync("test.txt");
 	const writeFile = await writeFileAsync("test5.txt", readFile);
-	// await unlinkAsync("test5.txt");
-	console.log(readFile.toString());
+	await unlinkAsync("test5.txt");
+	console.log(writeFile.toString());
 };
-
 run();
