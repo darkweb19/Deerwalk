@@ -16,7 +16,6 @@ const server = http.createServer((req, res) => {
 	} else {
 		res.write(`<h1>WElcome ${myUrl.query.name} </h1>`);
 	}
-
 	res.end();
 });
 
